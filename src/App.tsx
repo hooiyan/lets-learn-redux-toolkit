@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from './app/hooks'
-import { incremented } from './features/counter/counterSlice'
+import { incremented, amountAdded } from './features/counter/counterSlice'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { useFetchBreedQuery } from './features/dogs/dogsApiSlice'
 
 function App() {
   const dispatch = useAppDispatch()
   const count = useAppSelector((state) => state.counter.value)
 
   function handleClick() {
-    dispatch(incremented())
+    // dispatch(incremented())
+    dispatch(amountAdded(10))
   }
 
   return (
